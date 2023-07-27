@@ -6,7 +6,7 @@ const AboutPage = () => {
       </header>
       <main className="row">
         <article className="col">
-          <p>Contenido de la pagina acerca de</p>
+          <p>Contenido de la pagina acerca de :)</p>
         </article>
       </main>
     </>
