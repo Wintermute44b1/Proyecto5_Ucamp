@@ -42,6 +42,28 @@ const PublicNavbar = () => {
                 About
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                aria-current="page"
+                to="/products"
+              >
+                Products
+                </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                aria-current="page"
+                to="/cart"
+              >
+                Carrito
+              </NavLink>
+            </li>
           </ul>
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item dropdown">
@@ -51,7 +73,10 @@ const PublicNavbar = () => {
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+
               >
+                
+                
                 Cuenta
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
