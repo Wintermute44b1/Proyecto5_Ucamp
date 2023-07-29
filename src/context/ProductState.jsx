@@ -27,6 +27,23 @@ const ProductState = ({ children }) => {
     });
   }, []);
 
+  // const getProducts = async () => {
+  //   const response = await getProductsService();
+
+  //   dispatch({
+  //     type: "OBTENER_PRODUCTOS",
+  //     payload: response.data.data,
+  //   });
+  // };
+
+  // const getProduct = async (id) => {
+  //   const response = await getProductService(id);
+
+  //   dispatch({
+  //     type: "OBTENER_PRODUCTO",
+  //     payload: response.data.data,
+  //   });
+  // };
 
   const getProduct = useCallback(async (id) => {
     const response = await getProductService(id);
@@ -38,18 +55,50 @@ const ProductState = ({ children }) => {
   }, []);
 
   const addProduct = async (id) => {
-    const response = await getProductService(id);
+    try {
+      const response = await getProductService(id);
 
+      dispatch({
+        type: "AGREGAR_PRODUCTO",
+        payload: response.data.data,
+      });
+
+      Swal.fire({
+        icon: "success",
+        title: "Producto agregado al carrito",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    } catch (error) {
+      //console.log(error)
+      Swal.fire({
+        icon: "error",
+        title: "Error en la peticion",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
+  };
+
+  const deleteCartProduct = (id) => {
+    try {
+      dispatch({
+        type: "ELIMINAR_PRODUCTO",
+        payload: id,
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error al eliminar el producto del carrito",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
+  };
+
+  const vaciarCarrito = () => {
     dispatch({
-      type: "AGREGAR_PRODUCTO",
-      payload: response.data.data,
-    });
-
-    Swal.fire({
-      icon: "success",
-      title: "Producto agregado al carrito",
-      showConfirmButton: false,
-      timer: 2000,
+      type: "VACIAR_CARRITO",
     });
   };
 
@@ -62,6 +111,8 @@ const ProductState = ({ children }) => {
         getProduct,
         addProduct,
         cart: globalState.cart,
+        deleteCartProduct,
+        vaciarCarrito,
       }}
     >
       {children}

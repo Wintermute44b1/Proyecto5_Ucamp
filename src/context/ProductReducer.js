@@ -22,6 +22,20 @@ const reducer = (globalState, action) => {
           : [...globalState.cart, action.payload],
       };
 
+    case "ELIMINAR_PRODUCTO":
+      return {
+        ...globalState,
+        cart: globalState.cart.filter(
+          (product) => product.id !== action.payload
+        ),
+      };
+
+    case "VACIAR_CARRITO":
+      return {
+        ...globalState,
+        cart: [],
+      };
+
     default:
       return globalState;
   }

@@ -13,7 +13,7 @@ const App = () => {
       <AuthState>
         <PayPalScriptProvider options= {{
           "client-id": 
-          "JPPqGpXIsVyiHxkBcjUG6KIdsB9LdRE_PrrC6kvpHpJ8FgdQpjvjEB7ZWQ3sn-fKwW0T6U" //cambiar la llave cuando paypal me dej//
+          "ARx4d5eWP-JPPqGpXIsVyiHxkBcjUG6KIdsB9LdRE_PrrC6kvpHpJ8FgdQpjvjEB7ZWQ3sn-fKwW0T6U" //cambiar la llave cuando paypal me dej//
         }
 
         }>
