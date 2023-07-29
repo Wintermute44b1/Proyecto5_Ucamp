@@ -14,8 +14,12 @@ import RegisterPage from "../pages/RegisterPage";
 import ProductsPage from "../pages/ProductsPage";
 import CartPage from "../pages/CartPage";
 
+import { useContext, useEffect } from "react";
+import AuthContext from "../context/AuthContext";
 
 const AppRouter = () => {
+
+  const {renewToken} =useContext(AuthContext)
   return (
     <Router>
       <PublicNavbar />
