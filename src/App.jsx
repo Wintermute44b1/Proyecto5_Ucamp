@@ -1,3 +1,4 @@
+import {PayPalScriptProvider} from "@paypal/react-paypal-js"
 import AppRouter from "./router/AppRouter";
 import AuthState from "./context/AuthState";
 import ProductState from "./context/ProductState";
@@ -10,12 +11,18 @@ const App = () => {
   return (
     <>
       <AuthState>
+        <PayPalScriptProvider options= {{
+          "client-id": 
+          "JPPqGpXIsVyiHxkBcjUG6KIdsB9LdRE_PrrC6kvpHpJ8FgdQpjvjEB7ZWQ3sn-fKwW0T6U" //cambiar la llave cuando paypal me dej//
+        }
+
+        }>
         <ProductState>
           <AppRouter />
         </ProductState>
+        </PayPalScriptProvider>
       </AuthState>
     </>
   );
 };
-
 export default App;
