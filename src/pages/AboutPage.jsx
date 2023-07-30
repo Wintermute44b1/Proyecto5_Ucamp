@@ -1,14 +1,21 @@
 const AboutPage = () => {
   return (
     <>
-      <header className="row col">
-        <h1>About Page</h1>
-      </header>
-      <main className="row">
-        <article className="col">
-          <p>Contenido de la pagina acerca de :)</p>
-        </article>
-      </main>
+      <div>
+        <h1>Sobre nosotros</h1>
+        <p>
+          Somos una empresa que se especializa en todo lo que tenga que ver con abejas, miel, cera, abejas... y hasta botes de miel con forma de oso!
+        </p>
+        <img
+          src="src/imgs/bee.png"
+          style={{
+            width: "300px",
+            height: "300px",
+            margin: "0 auto",
+            float: "right",
+          }}
+        />
+      </div>
     </>
   );
 };

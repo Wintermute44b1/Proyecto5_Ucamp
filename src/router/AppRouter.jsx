@@ -14,7 +14,7 @@ import RegisterPage from "../pages/RegisterPage";
 import ProductsPage from "../pages/ProductsPage";
 import ProductPage from "../pages/ProductPage";
 import CartPage from "../pages/CartPage";
-import ProfilePage from "../pages/ProfilePage";
+
 
 import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
