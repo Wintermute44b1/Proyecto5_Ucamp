@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL_ROOT = `http://localhost:4000/api/productos`;
+const URL_ROOT = "https://backend-proyecto-5-nl9s.onrender.com/api/productos";
 
 const getProductsService = async () => {
   const response = await axios.get(`${URL_ROOT}`);
